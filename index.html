@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Deadly Sins | FF14 RP</title>
+    
+    <link rel="icon" href="SDS.png" type="image/png">
+
+    <meta property="og:title" content="Seven Deadly Sins | FF14 RP Host Club">
+    <meta property="og:description" content="Kujata / Empyreum 4-54 | 罪深き夜を、あなたと共に。">
+    <meta property="og:image" content="hutae.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Light&family=IM+Fell+English:ital@0;1&family=New+Tegomin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo-text">Seven Deadly Sins</div>
+            <div class="menu-trigger" id="menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="full-menu" id="nav-menu">
+        <ul class="nav-links">
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="cast">Cast</a></li>
+            <li><a href="#" data-page="menu">Menu</a></li>
+            <li><a href="#" data-page="reservation">Reservation</a></li>
+            <li><a href="#" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="content-area">
+        <section id="page-home" class="page active">
+            <div class="glass-panel main-visual">
+                <h1 class="main-title">Seven Deadly Sins</h1>
+                <p class="tagline">罪深き夜を、あなたと共に。</p>
+                <div class="info-divider"></div>
+                <div class="notice-section">
+                    <p class="location-text">Elemental DC Kujata / Empyreum 4-54</p>
+                    <div class="notice-box">
+                        <p>店外での声掛けはご遠慮ください</p>
+                        <p>DMはキャンセル連絡専用となります</p>
+                        <p>SS撮影時は他のお客様の名前にご配慮ください</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-cast" class="page">
+            <div id="cast-select-container">
+                <h2 class="section-title">Cast Select</h2>
+                <div class="cast-select-grid">
+                    <div class="sin-card" onclick="showCastDetail('envy')">
+                        <img src="Envy.png" alt="Envy"><div class="sin-label">ENVY</div>
+                    </div>
+                    <div class="sin-card" onclick="showCastDetail('lust')">
+                        <img src="Lust.png" alt="Lust"><div class="sin-label">LUST</div>
+                    </div>
+                    <div class="sin-card" onclick="showCastDetail('pride')">
+                        <img src="Pride.png" alt="Pride"><div class="sin-label">PRIDE</div>
+                    </div>
+                    <div class="sin-card" onclick="showCastDetail('gluttony')">
+                        <img src="Gluttony.png" alt="Gluttony"><div class="sin-label">GLUTTONY</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cast-detail-view" style="display: none;">
+                <div class="wide-detail-container">
+                    <div class="detail-bg-wrapper">
+                        <img id="detail-img-src" src="" alt="Cast Photo">
+                        <div class="detail-gradient-overlay"></div>
+                    </div>
+                    <div class="detail-content-layer">
+                        <button class="back-btn" onclick="backToCastSelect()">← Back</button>
+                        <div class="detail-info-text">
+                            <span id="detail-sin-title" class="sin-tag"></span>
+                            <h3 id="detail-name"></h3>
+                            <p id="detail-jp-name" class="jp-name-sub"></p>
+                            <div class="info-lists">
+                                <p><strong>FAVORITE:</strong> <span id="detail-like"></span></p>
+                                <p><strong>SPECIALTY:</strong> <span id="detail-skill"></span></p>
+                            </div>
+                            <div class="wide-message-box">
+                                <p id="detail-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-menu" class="page">
+            <h2 class="section-title">Menu</h2>
+            <div class="menu-container">
+                <div class="glass-panel menu-section">
+                    <h3 class="menu-sub-title">Drink & Item</h3>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">ボーレルティーセット</span><span class="item-price">30,000 G</span></div>
+                        <p class="menu-desc">ボーレル子爵家愛用の銘柄を使用した高貴なティーセット。</p>
+                    </div>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">モグモグアイスフロート</span><span class="item-price">30,000 G</span></div>
+                        <p class="menu-desc">愛らしいモーグリのアイスを添えて。推しカラーへ変更可能です。</p>
+                    </div>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">推しキャスト・カラーストーン</span><span class="item-price">100,000 G</span></div>
+                        <p class="menu-desc">1回のご来店につき1粒。5つ集めた方には、推しを独占できる特別な時間が…。</p>
+                    </div>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">愛を囁くウイスキー</span><span class="item-price">1,000,000 G</span></div>
+                        <p class="menu-desc">1〜3の数字の中から、キャストが甘い言葉をあなたに捧げます。</p>
+                    </div>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">祝祭のシャンパン（コール有）</span><span class="item-price">500,000 G</span></div>
+                        <p class="menu-desc">今夜はすべてを忘れて。キャスト一同による華やかなコールと共に。</p>
+                    </div>
+                    <div class="menu-item-group">
+                        <div class="menu-item"><span class="item-name">ヴィンテージ・高級ワイン</span><span class="item-price">500,000 G</span></div>
+                        <p class="menu-desc">ワインポート直輸入。芳醇な香りとまろやかな口当たりをその手に。</p>
+                    </div>
+                </div>
+                <div class="glass-panel menu-section">
+                    <h3 class="menu-sub-title">Special Menu</h3>
+                    <div class="menu-item"><span class="item-name">キャスト同行：ID探索（1名につき）</span><span class="item-price">1,000,000 G</span></div>
+                    <div class="menu-item"><span class="item-name">キャストとの二人きり写真（SS）</span><span class="item-price">50,000 G</span></div>
+                    <div class="menu-item"><span class="item-name">キャスト個人貸切（1名につき）</span><span class="item-price">1,000,000 G</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-reservation" class="page">
+            <h2 class="section-title">Reservation</h2>
+            <div class="glass-panel reservation-info">
+                <div class="flow-box">
+                    <h3 class="flow-title gold-text-simple">GUIDE & NOTICE</h3>
+                    <p class="flow-intro">下部のボタンより専用フォームへ移動し、必要事項をご入力ください</p>
+                    
+                    <div class="highlight-text-box gold-text">
+                        <p>「ご予約ありがとうございました。</p>
+                        <p>Elemental DC kujata エンピレアム第4区54番地 でお待ちしております。」</p>
+                        <p class="small-note">の画面が表示されれば完了です</p>
+                    </div>
+                    
+                    <p class="flow-footer">キャンセルの場合はお早めに <span class="gold-link">Official X</span> のDMへご連絡ください</p>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2Bw7DuKx4LYsPw6g04k0W3UcHbsBqs_rGPBOs-L-Ps-0PPg/viewform?usp=header" class="btn-gold-outline" target="_blank">予約フォームを開く</a>
+            </div>
+        </section>
+
+        <section id="page-contact" class="page">
+            <h2 class="section-title">Contact</h2>
+            <div class="menu-container">
+                <div class="glass-panel contact-section">
+                    <h3 class="menu-sub-title">SDS Official</h3>
+                    <p class="contact-desc">お問い合わせ・キャンセル連絡はこちら</p>
+                    <a href="https://x.com/sds_ff14_kujata?s=21" target="_blank" class="btn-gold-outline contact-btn">Official X</a>
+                </div>
+
+                <div class="glass-panel contact-section">
+                    <h3 class="menu-sub-title">Cast Accounts</h3>
+                    <div class="cast-contact-grid">
+                        <div class="cast-link-item">
+                            <span class="cast-name-tag">Envidia & Nepenthes</span>
+                            <a href="https://x.com/sds_plant?s=21" target="_blank" class="btn-gold-outline mini">X</a>
+                        </div>
+                        <div class="cast-link-item">
+                            <span class="cast-name-tag">Yu</span>
+                            <span class="status-note">未定</span>
+                        </div>
+                        <div class="cast-link-item">
+                            <span class="cast-name-tag">Rhea</span>
+                            <span class="status-note">未定</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel contact-section">
+                    <h3 class="menu-sub-title">Sister Shops</h3>
+                    <p class="shop-name">準備中...</p>
+                    <div class="shop-links">
+                        <span class="btn-gold-outline disabled">Official X</span>
+                        <span class="btn-gold-outline disabled">Official HP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-sns">
+            <a href="https://x.com/sds_ff14_kujata?s=21" target="_blank" class="x-icon-link">
+                <img src="Xico.png" alt="Official X" class="x-ico-img">
+            </a>
+        </div>
+        <p class="copy">&copy; SQUARE ENIX CO., LTD. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
