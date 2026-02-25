@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = link.getAttribute('data-page');
             navMenu.classList.remove('open');
             pages.forEach(p => p.classList.remove('active'));
-            document.getElementById(`page-${target}`).classList.add('active');
+            
+            const targetPage = document.getElementById(`page-${target}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
             
             if(target === 'cast') backToCastSelect();
             window.scrollTo(0, 0);
@@ -76,4 +80,5 @@ function showCastDetail(key) {
 function backToCastSelect() {
     document.getElementById('cast-select-container').style.display = 'block';
     document.getElementById('cast-detail-view').style.display = 'none';
+    window.scrollTo(0, 0);
 }
