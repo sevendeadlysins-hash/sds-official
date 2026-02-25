@@ -12,11 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = link.getAttribute('data-page');
             navMenu.classList.remove('open');
             pages.forEach(p => p.classList.remove('active'));
-            
-            const targetPage = document.getElementById(`page-${target}`);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
+            document.getElementById(`page-${target}`).classList.add('active');
             
             if(target === 'cast') backToCastSelect();
             window.scrollTo(0, 0);
@@ -65,6 +61,8 @@ const castData = {
 
 function showCastDetail(key) {
     const data = castData[key];
+    if (!data) return;
+
     document.getElementById('detail-sin-title').innerText = data.sin;
     document.getElementById('detail-name').innerText = data.name;
     document.getElementById('detail-jp-name').innerText = data.jpName;
@@ -72,6 +70,7 @@ function showCastDetail(key) {
     document.getElementById('detail-skill').innerText = data.skill;
     document.getElementById('detail-message').innerHTML = data.message.replace(/\n/g, '<br>');
     document.getElementById('detail-img-src').src = data.img;
+
     document.getElementById('cast-select-container').style.display = 'none';
     document.getElementById('cast-detail-view').style.display = 'block';
     window.scrollTo(0, 0);
@@ -80,5 +79,4 @@ function showCastDetail(key) {
 function backToCastSelect() {
     document.getElementById('cast-select-container').style.display = 'block';
     document.getElementById('cast-detail-view').style.display = 'none';
-    window.scrollTo(0, 0);
 }
