@@ -162,12 +162,12 @@ footer { padding: 50px 5%; text-align: center; }
     /* ... 以前の調整箇所 ... */
 
     /* ★ キャスト詳細画面の文字サイズ微調整場所 ★ */
-    .sin-tag { font-size: 0.7rem; }          /* ENVY などのタグ */
+    .sin-tag { font-size: 0.6rem; }          /* ENVY などのタグ */
     #detail-name { font-size: 1.1rem; }      /* 英名 (Envidia...) */
-    .jp-name-sub { font-size: 0.7rem; }      /* 日本語名 */
+    .jp-name-sub { font-size: 0.5rem; }      /* 日本語名 */
     .info-lists p { font-size: 0.65rem; }    /* FAVORITE / SPECIALTY */
     #detail-message { font-size: 0.55rem; }  /* メッセージ本文 */
-    .back-btn { font-size: 0.8rem; padding: 5px 15px; } /* 戻るボタン */
+    .back-btn { font-size: 0.7rem; padding: 4px 12px; } /* 戻るボタン */
 
     /* レイアウト崩れ防止：詳細画面の余白調整 */
     .detail-content-layer { padding: 15px; }

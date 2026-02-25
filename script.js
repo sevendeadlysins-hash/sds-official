@@ -27,8 +27,8 @@ const castData = {
         name: "Envidia J'acinto",
         jpName: "エンヴィディア ハシント",
         sin: "Envy / 嫉妬",
-        like: "甘い物、オーナー、お姫様",
-        skill: "紅茶占い、タロット占い",
+        like: "\n甘い物、オーナー、お姫様",
+        skill: "\n紅茶占い、タロット占い",
         message: "お姫様と楽しい時間を過ごせたら良いなぁ～♡\nあ、そうそう、俺ねぇ～占い得意なの♡特別にオーナーから教えてもらったんだぁ♡\nお姫様の事も隅から隅まで知りたいから占わせてよ♡",
         img: "Envidia J'acinto.png"
     },
@@ -36,8 +36,8 @@ const castData = {
         name: "Yu White",
         jpName: "ユウ ホワイト",
         sin: "Lust / 色欲",
-        like: "甘い物、バラとサクラ",
-        skill: "記憶力がちょっといいかも？",
+        like: "\n甘い物、バラとサクラ",
+        skill: "\n記憶力がちょっといいかも？",
         message: "沢山愛して、ね？",
         img: "Yu White.png"
     },
@@ -45,8 +45,8 @@ const castData = {
         name: "Rhea Kukvos",
         jpName: "レア ククヴォス",
         sin: "Pride / 傲慢",
-        like: "酒",
-        skill: "カードゲーム",
+        like: "\n酒",
+        skill: "\nカードゲーム",
         message: "勘違いしていい。\n態々時間を割いてやるんだ、俺を選んだ幸運を噛み締めると良い。",
         img: "Rhea Kukvos.png"
     },
@@ -54,8 +54,8 @@ const castData = {
         name: "Nepenthes Plant",
         jpName: "ネペンテス プラント",
         sin: "Gluttony / 暴食",
-        like: "食べ物全般、お姫様",
-        skill: "紅茶占い、タロット占い",
+        like: "\n食べ物全般、お姫様",
+        skill: "\n紅茶占い、タロット占い",
         message: "ここに来たら美味しいものが食べられるって聞いたんだけど。\nでも食べるのも良いけど、お姫様とお話するのも楽しいかもしれないなぁ…。\n僕ともっとお話しして？僕の事お腹いっぱいにしてよ。",
         img: "Nepenthes Plant.png"
     }
