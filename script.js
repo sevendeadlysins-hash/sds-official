@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const pages = document.querySelectorAll('.page');
 
+    // メニュー開閉
     menuBtn.onclick = () => navMenu.classList.toggle('open');
 
+    // ページ切り替え
     navLinks.forEach(link => {
         link.onclick = (e) => {
             e.preventDefault();

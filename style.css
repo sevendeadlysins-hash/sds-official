@@ -58,7 +58,7 @@ main { padding: 100px 5% 50px; min-height: 100vh; }
 .location-text { color: var(--accent-gold); margin-bottom: 25px; font-size: 1.2rem; }
 .notice-box { line-height: 2; font-size: 1rem; }
 
-/* Cast */
+/* Cast Grid */
 .cast-select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 500px; margin: 0 auto; }
 .sin-card { position: relative; cursor: pointer; border: 1px solid var(--accent-gold); aspect-ratio: 2/3; overflow: hidden; }
 .sin-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -81,26 +81,36 @@ main { padding: 100px 5% 50px; min-height: 100vh; }
 .back-btn:hover { background: rgba(197, 160, 89, 0.1); }
 .wide-message-box { background: rgba(232, 226, 214, 0.05); border-left: 2px solid var(--accent-gold); padding: 15px 20px; text-align: left; }
 
-/* Reservation / Contact / Menu */
-.gold-text-simple { color: var(--accent-gold) !important; }
-.highlight-text-box.gold-text {
-    background: rgba(197, 160, 89, 0.08); color: var(--accent-gold); 
-    border-top: 1px solid rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-    padding: 30px 20px; margin: 30px 0; font-weight: bold; line-height: 1.8;
-}
-.small-note { font-size: 0.85rem; margin-top: 10px; opacity: 0.8; }
-.gold-link { color: var(--accent-gold); font-weight: bold; }
+/* Menu / Reservation / Contact */
 .menu-container { width: 100%; max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; }
 .menu-sub-title { color: var(--accent-gold); border-bottom: 1px solid rgba(197, 160, 89, 0.3); display: inline-block; padding: 0 30px 8px; font-size: 1.5rem; margin-bottom: 30px; }
 .menu-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(232, 226, 214, 0.1); padding-bottom: 5px; margin-bottom: 5px; font-size: 1.2rem; }
 .item-price { color: var(--accent-gold); }
 .menu-desc { font-size: 0.9rem; color: rgba(232, 226, 214, 0.7); text-align: left; line-height: 1.6; margin-bottom: 20px; }
+
+.highlight-text-box.gold-text {
+    background: rgba(197, 160, 89, 0.08); color: var(--accent-gold); 
+    border-top: 1px solid rgba(197, 160, 89, 0.3); border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 30px 20px; margin: 30px 0; font-weight: bold; line-height: 1.8;
+}
+.gold-text-simple { color: var(--accent-gold) !important; }
+.gold-link { color: var(--accent-gold); font-weight: bold; }
 .cast-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 600px; margin: 0 auto; }
 .cast-link-item { display: flex; justify-content: space-between; align-items: center; background: rgba(232, 226, 214, 0.05); padding: 10px 15px; }
 
 /* Buttons & Footer */
 .btn-gold-outline { display: inline-block; padding: 15px 40px; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; transition: 0.3s; cursor: pointer; }
+.btn-gold-outline:hover:not(.disabled) { background: rgba(197, 160, 89, 0.15); }
 .btn-gold-outline.mini { padding: 5px 15px; font-size: 0.9rem; }
+
+/* ★ 修正：準備中（disabled）のグレーアウト設定 ★ */
+.btn-gold-outline.disabled { 
+    border-color: rgba(197, 160, 89, 0.2) !important; 
+    color: rgba(197, 160, 89, 0.2) !important; 
+    cursor: default; 
+    pointer-events: none; 
+}
+
 footer { padding: 50px 5%; text-align: center; }
 .x-ico-img { width: 40px; height: 40px; object-fit: contain; margin-bottom: 20px; }
 .footer-copyright { font-size: 0.75rem; color: rgba(232, 226, 214, 0.4); line-height: 1.8; }
@@ -113,37 +123,36 @@ footer { padding: 50px 5%; text-align: center; }
 
 /* ==========================================
    ★ スマホ用レスポンシブ調整セクション ★
+   微調整はこの下の数値を変更してください
    ========================================== */
 .sp-only { display: none; }
 
 @media screen and (max-width: 768px) {
     .sp-only { display: block; }
 
-    /* --- ホーム画面の文字サイズ --- */
-    /* 画面幅に合わせて伸縮(8.5vw)させつつ、最大サイズを制限して1行に収める */
+    /* 店名を1行に収める設定 */
     .main-title { 
         font-size: min(8.5vw, 2.2rem); 
         letter-spacing: 0.05em;
+        white-space: nowrap;
     }
-    .tagline { font-size: 0.85rem; } /* キャッチコピー */
-    .location-text { font-size: 0.95rem; } /* DC/住所 */
-    .notice-box { font-size: 0.8rem; } /* 注意事項の本文 */
 
-    /* --- メニュー・連絡先の文字サイズ --- */
-    .section-title { font-size: 1.5rem; } /* Cast Selectなどの見出し */
-    .menu-sub-title { font-size: 1.2rem; } /* Drink & Itemなどの小見出し */
-    .menu-item { font-size: 0.95rem; } /* メニュー名と価格 */
-    .menu-desc { font-size: 0.75rem; } /* メニューの説明文 */
-    .cast-name-tag { font-size: 0.85rem; } /* コンタクトのキャスト名 */
-
-    /* --- 予約画面の文字サイズ --- */
-    .highlight-text-box.gold-text { font-size: 0.8rem; } /* 金枠内の文章 */
-    .flow-intro { font-size: 0.85rem; } /* 案内文 */
+    /* --- 文字サイズの微調整場所 (remの数字を変更) --- */
+    .tagline { font-size: 0.8rem; }          /* キャッチコピー */
+    .location-text { font-size: 0.75rem; }    /* DC名・住所 */
+    .notice-box { font-size: 0.6rem; }       /* 注意事項の本文 */
     
-    /* --- レイアウトの微調整 --- */
+    .section-title { font-size: 1.3rem; }     /* 各ページの大見出し */
+    .menu-sub-title { font-size: 1.1rem; }    /* 小見出し */
+    .menu-item { font-size: 0.8rem; }         /* メニュー名 */
+    .menu-desc { font-size: 0.6rem; }         /* メニュー説明 */
+    
+    .highlight-text-box.gold-text { font-size: 0.75rem; } 
+    .footer-copyright { font-size: 0.55rem; }
+
+    /* レイアウトの微調整 */
     .cast-contact-grid { grid-template-columns: 1fr; }
     .wide-detail-container { aspect-ratio: auto; height: 85vh; }
     .detail-content-layer { padding: 20px; }
     .detail-info-text h3 { font-size: 1.4rem; }
-    .footer-copyright { font-size: 0.7rem; }
 }
